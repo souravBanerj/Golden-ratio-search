@@ -1,0 +1,41 @@
+import math as m
+def f(x):
+    return x**4 -14*x**3 +60*x**2 -70*x 
+p=0.382
+c=int(p)
+e=1/1000
+ea=100
+t=(1-p)
+a=0
+b=2
+i=1
+e=0.3
+c=a+p*(b-a)
+d=a+t*(b-a)
+f1 = f(a)
+f2= f(b)
+f3=f(c)
+f4=f(d)
+while ea>0.1:
+    if(abs(a-b)<0.3):
+        min1=(a+b)/2
+        print("min",min1)
+    
+        break
+    else:
+        if(f3<f4):
+            b=d
+            f2=f4
+            d=c
+            f4=f3
+            c=a+p*(b-a)
+            f3=f(c)
+        else:
+            a=c
+            f1=f3
+            c=d
+            d=a+t*(b-a)
+            f4=f(d)
+    print(f"Value of f1 and f2 is {f1,f2} and b-a is given as {b-a}")
+    i+=1
+
